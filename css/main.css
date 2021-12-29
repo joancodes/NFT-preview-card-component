@@ -1,0 +1,201 @@
+/**
+ * This file contains all application-wide CSS.
+ *
+ * 1. Fonts
+ * 
+ * 2. Typography
+ * 
+ * 3. Layouts
+ * 
+ * 4. Media Queries
+ *
+ */
+
+/* ==========================================================================
+1. Fonts
+========================================================================== */
+
+/*
+font-family: 'Outfit', serif;
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* custom properties styles */
+:root {
+
+    /* font-family variables */
+    --ff-primary: 'Outfit', sans-serif; 
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semi-bold: 600;
+
+    /* color variables */
+    --clr-primary-soft-blue: hsl(215, 51%, 70%);
+    --clr-primary-cyan: hsl(178, 100%, 50%);
+    --clr-neutral-main-BG: hsl(217, 54%, 11%);
+    --clr-neutral-card-BG: hsl(216, 50%, 16%);
+    --clr-neutral-line: hsl(215, 32%, 27%);
+    --clr-white: hsl(0, 0%, 100%);
+
+
+    /* font-size variables */
+    /* 1rem = 16px */ 
+    --fs-h1: 1.6rem;
+    --fs-body: 1.125rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-size: var(--fs-body);
+    -webkit-backface-visibility: hidden;
+    text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+2. Typography
+========================================================================== */
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h1 {
+    font-family: var(--ff-primary);
+    font-style: normal;
+    font-weight: var(--fw-semi-bold);
+    font-size: var(--fs-h1);
+    color: var(--clr-white);
+    text-align: left;
+}
+
+p {
+    letter-spacing: normal;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover, a:visited, a:focus {
+    cursor: pointer;
+    color: var(--clr-primary-cyan);
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+/* ==========================================================================
+3. Layouts
+========================================================================== */
+
+.container {
+    background: var(--clr-neutral-main-BG);
+    height: 100vh;
+    position: relative;
+}
+
+
+.card {
+    background: var(--clr-neutral-card-BG);
+    font-family: var(--ff-primary);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 1.3em;
+    border-radius: 15px;
+    width: 50vh;
+}
+
+.card__body p {
+    font-size: 1.125rem;
+    color: var(--clr-primary-soft-blue);
+    font-weight: var(--fw-light);
+    line-height: 1.75em;
+}
+
+.card__body--main-img {
+    border-radius: 15px;
+}
+
+.card__title,
+.card__paragraph {
+    margin-top: 1em;
+}
+
+.card__body--details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .8em;
+}
+
+.card__body--details-pri, 
+.card__body--details-sec {
+    display: flex;
+    align-items: center;
+}
+
+.card__body--details-pri,
+.card__body--details-sec, p {
+    margin-left: .3em;
+}
+
+.card__body--details-pri p {
+    color: var(--clr-primary-cyan);
+    font-weight: var(--fw-semi-bold);
+}
+
+.card__divider {
+    background-color: var(--clr-neutral-line);
+    border: 0 none;
+    height: 1px;
+    color: var(--clr-neutral-line);
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.card__footer img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-white);
+    margin: 1em 0;
+}
+
+.card__footer p {
+    color: var(--clr-primary-soft-blue);
+    margin-left: .8em;
+}
+
+.card__footer span {
+    color: var(--clr-white);
+}
+
+
